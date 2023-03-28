@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+</head>
+<body>
+<div th:switch="${contacts}">
+    <h2 th:case="null">No contacts found!</h2>
+    <div th:case="*">
+        <h2>Contacts</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>user</th>
+                <th>surname</th>
+                <th>name</th>
+                <th>middle_name</th>
+                <th>phone_mobile</th>
+                <th>phone_home</th>
+                <th>adress</th>
+                <th>e-mail</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="contact : ${contacts}">
+                <td th:text="${contsct.id}"></td>
+                <td th:text="${contsct.user}"></td>
+                <td th:text="${contsct.surname}"></td>
+                <td th:text="${contsct.name}"></td>
+                <td th:text="${contsct.middleName}"></td>
+                <td th:text="${contsct.phoneMobile}"></td>
+                <td th:text="${contsct.phoneHome}"></td>
+                <td th:text="${contsct.adress}"></td>
+                <td th:text="${contsct.mail}"></td>
+
+                <td><a th:href="@{contact-update/{id}(id=${contact.id})}">Edit</a></td>
+                <td><a th:href="@{contact-delete/{id}(id=${contact.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/contact-create">Create contact</a></p>
+</div>
+</body>
+</html>
