@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Contacts</title>
@@ -27,15 +27,15 @@
             </thead>
             <tbody>
             <tr th:each="contact : ${contacts}">
-                <td th:text="${contsct.id}"></td>
-                <td th:text="${contsct.user}"></td>
-                <td th:text="${contsct.surname}"></td>
-                <td th:text="${contsct.name}"></td>
-                <td th:text="${contsct.middleName}"></td>
-                <td th:text="${contsct.phoneMobile}"></td>
-                <td th:text="${contsct.phoneHome}"></td>
-                <td th:text="${contsct.adress}"></td>
-                <td th:text="${contsct.mail}"></td>
+                <td th:text="${contact.id}"></td>
+                <td th:text="${contact.user}"></td>
+                <td th:text="${contact.surname}"></td>
+                <td th:text="${contact.name}"></td>
+                <td th:text="${contact.middleName}"></td>
+                <td th:text="${contact.phoneMobile}"></td>
+                <td th:text="${contact.phoneHome}"></td>
+                <td th:text="${contact.adress}"></td>
+                <td th:text="${contact.mail}"></td>
 
                 <td><a th:href="@{contact-update/{id}(id=${contact.id})}">Edit</a></td>
                 <td><a th:href="@{contact-delete/{id}(id=${contact.id})}">Delete</a></td>
