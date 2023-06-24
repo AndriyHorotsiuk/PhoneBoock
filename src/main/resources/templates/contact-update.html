@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body >
+<form  action="#" th:action="@{/contact-update}" th:object="${contact}" method="post" >
+    <div >
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+        <br>
+        <br>
+    <label for="surname">Surname</label>
+    <input type="text" th:field="*{surname}" id="surname" placeholder="surname">
 
+        <br>
+        <br>
+    <label for="name"> Name </label>
+    <input type="text" th:field="*{name}" id="name" placeholder="name">
+        <br>
+        <br>
+    <label for="middleName"> Middle_name </label>
+    <input type="text" th:field="*{middleName}" id="middleName" placeholder="middle name">
+        <br>
+        <br>
+    <label for="phoneMobile"> Phone mobile </label>
+    <input type="text" th:field="*{phoneMobile}" id="phoneMobile" placeholder="phone mobile">
+        <br>
+        <br>
+    <label for="phoneHome"> Phone home </label>
+    <input type="text" th:field="*{phoneHome}" id="phoneHome" placeholder="phone_home">
+        <br>
+        <br>
+    <label for="adress"> Adress </label>
+    <input type="text" th:field="*{adress}" id="adress" placeholder="adress">
+        <br>
+        <br>
+    <label for="mail"> Mail </label>
+    <input type="text" th:field="*{mail}" id="mail" placeholder="mail">
+        <br>
+        <br>
+    <input type="submit" value="Update Contact">
+    </div>
+</form>
 </body>
 </html>
